@@ -1,0 +1,13 @@
+# Site scraping & analysis (development only)
+scrape_site.py
+site_analysis/
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+
+# Placeholder (tracked separately once real file is added)
+policies/documents/.gitkeep
