@@ -284,6 +284,51 @@
       });
     });
 
+    /* ── Complaint Data Table (complaint-data.html) ── */
+    const monthlyTbody = document.getElementById('monthly-tbody');
+    const annualTbody  = document.getElementById('annual-tbody');
+    if (monthlyTbody && annualTbody) {
+      const base = window.location.pathname.endsWith('/') ? '.' : '.';
+      fetch(base + '/data/complaints.json')
+        .then(function (r) { return r.json(); })
+        .then(function (d) {
+          const title = document.getElementById('monthly-table-title');
+          if (title) title.textContent = 'Data for the month ending – ' + d.month;
+
+          var totals = { prev: 0, received: 0, resolved: 0, total: 0, old: 0, avg: 0 };
+          var html = '';
+          d.monthly.forEach(function (row, i) {
+            totals.prev     += row.prev_pending;
+            totals.received += row.received;
+            totals.resolved += row.resolved;
+            totals.total    += row.total_pending;
+            totals.old      += row.old_pending;
+            totals.avg      += row.avg_days;
+            html += '<tr><td>' + (i + 1) + '</td><td>' + row.source + '</td><td>' +
+              row.prev_pending + '</td><td>' + row.received + '</td><td>' +
+              row.resolved + '</td><td>' + row.total_pending + '</td><td>' +
+              row.old_pending + '</td><td>' + row.avg_days + '</td></tr>';
+          });
+          html += '<tr class="complaint-table-total"><td colspan="2"><strong>Grand Total</strong></td><td>' +
+            totals.prev + '</td><td>' + totals.received + '</td><td>' +
+            totals.resolved + '</td><td>' + totals.total + '</td><td>' +
+            totals.old + '</td><td>' + totals.avg + '</td></tr>';
+          monthlyTbody.innerHTML = html;
+
+          var aHtml = '';
+          d.annual.forEach(function (row, i) {
+            aHtml += '<tr><td>' + (i + 1) + '</td><td>' + row.year + '</td><td>' +
+              row.carried + '</td><td>' + row.received + '</td><td>' +
+              row.resolved + '</td><td>' + row.pending + '</td></tr>';
+          });
+          annualTbody.innerHTML = aHtml;
+        })
+        .catch(function () {
+          monthlyTbody.innerHTML = '<tr><td colspan="8" style="text-align:center;color:var(--text-light)">Data unavailable</td></tr>';
+          annualTbody.innerHTML  = '<tr><td colspan="6" style="text-align:center;color:var(--text-light)">Data unavailable</td></tr>';
+        });
+    }
+
     /* ── Set active nav link based on current page ── */
     const currentPath = window.location.pathname.replace(/\/$/, '') || '/';
     document.querySelectorAll('.nav-link[data-page]').forEach(function (link) {

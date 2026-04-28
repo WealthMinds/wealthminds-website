@@ -10,7 +10,7 @@ Website for **WealthMinds**, a SEBI-registered Research Analyst firm founded by 
 
 WealthMinds provides disciplined equity research to help investors build long-term wealth. The firm is registered with SEBI as a Research Analyst (INH000024295) and enlisted with BSE (No. 6885).
 
-**Founder:** Srishti Mendiratta — SEBI Registered Research Analyst & Certified Financial Planner®  
+**Founder:** Srishti Mendiratta — Founder & Principal Analyst, SEBI Registered Research Analyst & Certified Financial Planner®  
 **Contact:** investor@wealthminds.co.in | +91 97266 29121  
 **Office:** 96, New Cloth Market, Sarangpur, Sherkotda, Ahmedabad, Gujarat 380002
 

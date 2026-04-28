@@ -11,7 +11,7 @@ Static HTML/CSS/JS website for **WealthMinds**, a SEBI-registered Research Analy
 | File | Purpose |
 |------|---------|
 | `index.html` | Home page |
-| `about.html` | About Srishti / WealthMinds |
+| `about.html` | About Srishti / WealthMinds — Founder & Principal Analyst |
 | `services.html` | Services overview |
 | `services/swing-trading-research.html` | Swing trading detail page |
 | `services/long-term-investment-research.html` | Long-term investment detail page |
@@ -63,6 +63,12 @@ Known working Unsplash photo IDs used on the site:
 ## Accessibility Controls
 
 The HC (high contrast) and A−/A/A+ (font size) buttons are embedded inside `.header-inner` as `.header-a11y` on every page — they are NOT a separate floating widget. They are hidden on mobile (≤768px) where the hamburger takes over. Do not add a separate floating `.a11y-widget` div.
+
+## Content Notes
+
+- `index.html` tab title is `WealthMinds` (no subtitle)
+- `about.html`: Guiding Principles / Professional Philosophy section is currently HTML-commented out pending revised content
+- `investor-charter.html`: Vision uses the "stock market is there to serve you" Buffett quote; Mission is written in first-person by Srishti
 
 ## Pending Setup (see ASSETS_NEEDED.md)
 
