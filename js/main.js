@@ -20,6 +20,19 @@
   /* ── 2. DOM READY ── */
   document.addEventListener('DOMContentLoaded', function () {
 
+    /* ── aria-live announce region ── */
+    const announcer = document.createElement('div');
+    announcer.id = 'a11y-announce';
+    announcer.setAttribute('aria-live', 'polite');
+    announcer.setAttribute('aria-atomic', 'true');
+    announcer.style.cssText = 'position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;';
+    document.body.appendChild(announcer);
+
+    function announce(msg) {
+      announcer.textContent = '';
+      requestAnimationFrame(() => { announcer.textContent = msg; });
+    }
+
     /* ── Accessibility Widget ── */
     const contrastBtn  = document.getElementById('contrast-toggle');
     const fontIncrease = document.getElementById('font-increase');
@@ -48,17 +61,19 @@
         if (isHigh) {
           root.removeAttribute('data-contrast');
           localStorage.removeItem('wm-contrast');
+          announce('High contrast mode disabled');
         } else {
           root.setAttribute('data-contrast', 'high');
           localStorage.setItem('wm-contrast', 'high');
+          announce('High contrast mode enabled');
         }
         updateContrastBtn();
       });
     }
 
-    if (fontIncrease) fontIncrease.addEventListener('click', () => applyScale(currentScale + 0.1));
-    if (fontDecrease) fontDecrease.addEventListener('click', () => applyScale(currentScale - 0.1));
-    if (fontReset)    fontReset.addEventListener('click',    () => applyScale(1));
+    if (fontIncrease) fontIncrease.addEventListener('click', () => { applyScale(currentScale + 0.1); announce('Font size increased'); });
+    if (fontDecrease) fontDecrease.addEventListener('click', () => { applyScale(currentScale - 0.1); announce('Font size decreased'); });
+    if (fontReset)    fontReset.addEventListener('click',    () => { applyScale(1);                   announce('Font size reset');     });
 
     /* ── Mobile Navigation ── */
     const hamburger  = document.getElementById('hamburger');
