@@ -3,7 +3,8 @@ scrape_site.py
 site_analysis/
 
 # Local data / scratch files
-data/
+data/*
+!data/complaints.json
 
 # Node (if a dev server is ever used)
 node_modules/
