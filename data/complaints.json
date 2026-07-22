@@ -6,7 +6,6 @@
     { "source": "Other Sources",            "prev_pending": 0, "received": 0, "resolved": 0, "total_pending": 0, "old_pending": 0, "avg_days": 0 }
   ],
   "annual": [
-    { "year": "2025–2026", "carried": 0, "received": 0, "resolved": 0, "pending": 0 },
-    { "year": "2024–2025", "carried": 0, "received": 0, "resolved": 0, "pending": 0 }
+    { "year": "2025–2026", "carried": 0, "received": 0, "resolved": 0, "pending": 0 }
   ]
 }
