@@ -39,7 +39,7 @@
         <a href="services.html"         class="nav-link" data-page="services">Services</a>
         <a href="policies.html"         class="nav-link" data-page="policies">Policies</a>
         <a href="investor-charter.html" class="nav-link" data-page="investor-charter">Investor Charter</a>
-        <a href="complaint-data.html"   class="nav-link" data-page="complaint-data">Complaint Data</a>
+        <a href="insights.html"   class="nav-link" data-page="insights">Insights</a>
         <a href="contact.html"          class="nav-link" data-page="contact">Contact</a>
       </nav>
       <div class="header-a11y" role="toolbar" aria-label="Accessibility controls">
@@ -63,7 +63,7 @@
     <a href="services.html"         class="nav-link" data-page="services">Services</a>
     <a href="policies.html"         class="nav-link" data-page="policies">Policies</a>
     <a href="investor-charter.html" class="nav-link" data-page="investor-charter">Investor Charter</a>
-    <a href="complaint-data.html"   class="nav-link" data-page="complaint-data">Complaint Data</a>
+    <a href="insights.html"   class="nav-link" data-page="insights">Insights</a>
     <a href="contact.html"          class="nav-link" data-page="contact">Contact</a>
   </nav>
 </header>
@@ -156,6 +156,84 @@
   </div>
 </section>
 
+<!-- ═══ COMPLAINT TABLES ═══ -->
+<section class="section-padding" style="background:var(--surface);" aria-labelledby="complaint-data-heading">
+  <div class="container">
+
+    <div class="text-center reveal" style="--delay:0s; margin-bottom:2.5rem;">
+      <span class="section-label">SEBI Compliance</span>
+      <h2 id="complaint-data-heading" class="section-title">Grievance Summary</h2>
+      <div class="title-underline title-underline-center"></div>
+    </div>
+
+    <!-- Monthly Summary Table -->
+    <div class="complaint-table-wrap reveal" style="--delay:0.1s">
+      <h3 id="monthly-table-title" class="complaint-table-title">Data for the month ending – June 2026</h3>
+      <div class="table-responsive" role="region" aria-label="Monthly complaint summary table" tabindex="0">
+        <table class="complaint-table">
+          <thead>
+            <tr>
+              <th scope="col">Sr No</th>
+              <th scope="col">Received From</th>
+              <th scope="col">Pending at End of Last Month</th>
+              <th scope="col">Received</th>
+              <th scope="col">Resolved</th>
+              <th scope="col">Total Pending</th>
+              <th scope="col">Pending Complaint &gt;3 Months</th>
+              <th scope="col">Avg Resolution Time (Days)</th>
+            </tr>
+          </thead>
+          <tbody id="monthly-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Annual Summary Table -->
+    <div class="complaint-table-wrap reveal" style="--delay:0.2s; margin-top:3rem;">
+      <h3 class="complaint-table-title">Annual Complaint Data</h3>
+      <div class="table-responsive" role="region" aria-label="Annual complaint summary table" tabindex="0">
+        <table class="complaint-table">
+          <thead>
+            <tr>
+              <th scope="col">Sr No</th>
+              <th scope="col">Year</th>
+              <th scope="col">Carried Forward from Previous Year</th>
+              <th scope="col">Received</th>
+              <th scope="col">Resolved</th>
+              <th scope="col">Pending</th>
+            </tr>
+          </thead>
+          <tbody id="annual-tbody"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Grievance Contact -->
+    <div class="grievance-contact reveal" style="--delay:0.3s">
+      <h3>Grievance Redressal Contact</h3>
+      <p>For any complaints or grievances, please contact us directly:</p>
+      <div class="grievance-details">
+        <div class="grievance-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <div>
+            <span class="grievance-label">Email</span>
+            <a href="mailto:investor@wealthminds.co.in">investor@wealthminds.co.in</a>
+          </div>
+        </div>
+        <div class="grievance-item">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 13.1 19.79 19.79 0 0 1 1.61 4.55a2 2 0 0 1 1.99-2.18h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 9a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+          <div>
+            <span class="grievance-label">Phone</span>
+            <a href="tel:+919726629121">+91 97266 29121</a>
+          </div>
+        </div>
+      </div>
+      <p class="grievance-note">You may also register complaints with SEBI via the <strong>SCORES platform</strong> at <a href="https://scores.sebi.gov.in" target="_blank" rel="noopener noreferrer">scores.sebi.gov.in</a>.</p>
+    </div>
+
+  </div>
+</section>
+
 <!-- ═══ CTA ═══ -->
 <section class="cta-section" aria-labelledby="charter-cta-heading">
   <div class="container">
@@ -163,7 +241,6 @@
     <p class="reveal" style="--delay:0.1s">We are always available to address any queries regarding our research, policies, or commitment to you as a client.</p>
     <div class="hero-cta-group" style="justify-content:center;" role="group">
       <a href="contact.html" class="btn btn-white reveal" style="--delay:0.2s">Contact Us</a>
-      <a href="complaint-data.html" class="btn btn-outline-white reveal" style="--delay:0.3s">Complaint Data</a>
     </div>
   </div>
 </section>

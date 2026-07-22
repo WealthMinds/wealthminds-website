@@ -16,8 +16,8 @@ Static HTML/CSS/JS website for **WealthMinds**, a SEBI-registered Research Analy
 | `services/swing-trading-research.html` | Swing trading detail page |
 | `services/long-term-investment-research.html` | Long-term investment detail page |
 | `policies.html` | Links to policy PDFs |
-| `investor-charter.html` | SEBI investor charter |
-| `complaint-data.html` | Monthly complaint data table (update each month) |
+| `investor-charter.html` | SEBI investor charter (includes Grievance Summary complaint data tables at the bottom) |
+| `insights.html` | Blog/insights placeholder page (empty — content pending) |
 | `contact.html` | Contact form (Formspree) |
 | `404.html` | Custom 404 page (auto-served by GitHub Pages) |
 | `sitemap.xml` | XML sitemap for all 9 pages |
@@ -56,7 +56,7 @@ Known working Unsplash photo IDs used on the site:
 - `1573496359142-b8d87734a5a2` — professional woman (about hero)
 - `1450101499163-c8848c66ca85` — documents (policies hero)
 - `1590283603385-17ffb3a7f29f` — investment chart (investor-charter hero)
-- `1551288049-bebda4e38f71` — data analytics (complaint-data hero)
+- `1551288049-bebda4e38f71` — data analytics (insights hero)
 - `1497366216548-37526070297c` — office interior (contact hero)
 - `1579532537598-459ecdaf39cc` — growth chart (long-term investment card)
 
@@ -76,11 +76,12 @@ The HC (high contrast) and A−/A/A+ (font size) buttons are embedded inside `.h
 - 7 PDFs in `policies/documents/` — exact filenames matter
 - Formspree form ID in `contact.html` — replace `REPLACE_WITH_YOUR_ID`
 - Social media `href="#"` placeholders for LinkedIn, Twitter, YouTube
-- `complaint-data.html` — update the monthly complaint table each month
+- `investor-charter.html` — update the monthly complaint table (Grievance Summary section) each month
+- `insights.html` — currently blank; build out blog/article content later
 
 ## SEBI Compliance Notes
 
 - The site must always display SEBI registration number and disclaimer text
-- Investor charter and complaint data pages are regulatory requirements — do not remove them
+- Investor charter page (including its embedded complaint data tables) is a regulatory requirement — do not remove it
 - Policy PDF filenames in `policies/documents/` must match exactly what `policies.html` links to
 - Service detail pages must retain the SEBI risk disclaimer banner

@@ -20,12 +20,11 @@ Instagram is already linked to `https://www.instagram.com/wealthminds.research`.
 
 ## 2. Complaint Data (Monthly Updates)
 
-The `complaint-data.html` page has a table currently showing February 2026 data.
+The Grievance Summary section near the bottom of `investor-charter.html` has a table driven by `data/complaints.json`.
 
 **To update monthly:**
-1. Open `complaint-data.html`
-2. Find the heading: `Data for the month ending – February 2026`
-3. Update the month/year and edit the table cells with the actual numbers
+1. Open `data/complaints.json`
+2. Update `month` and the `monthly`/`annual` figures with the actual numbers
 
 ---
 

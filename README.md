@@ -42,8 +42,8 @@ Pure static site — no build tools, no frameworks, no dependencies.
 | Swing Trading Research | `/services/swing-trading-research.html` |
 | Long-Term Investment Research | `/services/long-term-investment-research.html` |
 | Policies | `/policies.html` |
-| Investor Charter | `/investor-charter.html` |
-| Complaint Data | `/complaint-data.html` |
+| Investor Charter (incl. Grievance Summary / complaint data) | `/investor-charter.html` |
+| Insights (placeholder) | `/insights.html` |
 | Contact | `/contact.html` |
 
 ---
@@ -83,7 +83,7 @@ python -m http.server 8000
 
 ## Maintenance
 
-**Monthly:** Update the complaint data table in `complaint-data.html` with figures for the new month.
+**Monthly:** Update the complaint data table in the Grievance Summary section of `investor-charter.html` with figures for the new month.
 
 **As needed:** Update `sitemap.xml` `<lastmod>` dates when pages change significantly.
 
@@ -94,8 +94,7 @@ python -m http.server 8000
 This site is a regulatory requirement. Do not remove:
 - SEBI registration number (INH000024295) displayed in the footer
 - Disclaimer text on all pages and service pages
-- Investor Charter page (`investor-charter.html`)
-- Complaint Data page (`complaint-data.html`)
+- Investor Charter page, including its embedded complaint data tables (`investor-charter.html`)
 - Policy document links (`policies.html`)
 
 ---
