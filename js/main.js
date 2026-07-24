@@ -399,5 +399,13 @@
       if (isActive) link.classList.add('active');
     });
 
+    /* ── Contact page: hide map iframe if it fails to load ── */
+    const mapIframe = document.getElementById('map-iframe');
+    if (mapIframe) {
+      mapIframe.addEventListener('error', function () {
+        mapIframe.style.display = 'none';
+      });
+    }
+
   });
 })();

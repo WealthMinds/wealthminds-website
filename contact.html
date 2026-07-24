@@ -250,8 +250,13 @@
         </div>
 
         <!-- Interactive Map -->
-        <div class="map-embed-wrap">
+        <div class="map-embed-wrap" id="map-embed-wrap">
+          <div class="map-fallback" id="map-fallback" aria-hidden="true">
+            <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+            <span>96 New Cloth Market, Sarangpur, Sherkotda, Ahmedabad, Gujarat 380002</span>
+          </div>
           <iframe
+            id="map-iframe"
             src="https://maps.google.com/maps?q=96,+New+Cloth+Market,+Sarangpur,+Sherkotda,+Ahmedabad,+Gujarat+380002&output=embed&z=17"
             title="WealthMinds office location — 96 New Cloth Market, Sarangpur, Sherkotda, Ahmedabad"
             loading="lazy"
