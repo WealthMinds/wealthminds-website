@@ -421,9 +421,19 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 .hero-bg {
   position: absolute;
   inset: 0;
+  background-image: url('../assets/images/hero-chart-motif.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Reuse the same brand chart motif on service-card thumbnails instead of
+   stock photography. */
+.card-img-chart {
+  position: relative;
+  background-image: url('../assets/images/hero-chart-motif.svg');
+  background-size: cover;
+  background-position: 60% 40%;
 }
 
 .hero-overlay {
