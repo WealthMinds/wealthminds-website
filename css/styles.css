@@ -1228,6 +1228,14 @@ blockquote.philosophy-quote p {
   margin-top: 3rem;
 }
 
+/* When the grid resolves to 3 columns, center a lone orphan card left
+   alone in the final row instead of leaving it stranded on the left. */
+@media (min-width: 950px) {
+  .policy-card:last-child:nth-child(3n+1) {
+    grid-column: 2;
+  }
+}
+
 .policy-card {
   background: var(--bg);
   border: 1px solid var(--border);
