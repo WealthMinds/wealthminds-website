@@ -466,6 +466,28 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   margin-bottom: 1.5rem;
 }
 
+.hero-kicker {
+  display: block;
+  font-size: calc(0.85rem * var(--font-scale));
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.hero-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: calc(0.85rem * var(--font-scale));
+  color: var(--white-80);
+  letter-spacing: 0.02em;
+}
+.hero-meta-row span[aria-hidden] { color: var(--gold); opacity: 0.7; }
+
 .hero-home h1 {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
   font-weight: 900;
@@ -1108,6 +1130,13 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   display: block;
 }
 
+.profile-intro {
+  color: var(--white-80);
+  font-size: calc(1rem * var(--font-scale));
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
 .credential-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1122,6 +1151,33 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   padding: 0.4rem 0.9rem;
   border-radius: 50px;
   white-space: nowrap;
+}
+
+.profile-stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-stat-num {
+  font-size: calc(1.5rem * var(--font-scale));
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.profile-stat-lbl {
+  font-size: calc(0.78rem * var(--font-scale));
+  color: var(--white-80);
+  margin-top: 0.2rem;
 }
 
 /* Advisor section */
