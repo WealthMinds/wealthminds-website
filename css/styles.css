@@ -833,6 +833,49 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 }
 .service-card-link:hover { gap: 0.6rem; }
 
+/* === INSIGHTS TABS === */
+.insights-tabs {
+  position: relative;
+  display: flex;
+  width: fit-content;
+  gap: 0.25rem;
+  margin: 2.5rem auto 0;
+  padding: 0.35rem;
+  background: var(--primary-light);
+  border-radius: 50px;
+}
+.insights-tab {
+  position: relative;
+  z-index: 1;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 0.65rem 1.6rem;
+  font-size: calc(0.95rem * var(--font-scale));
+  font-weight: 600;
+  color: var(--text-muted);
+  border-radius: 50px;
+  transition: color var(--transition);
+  white-space: nowrap;
+}
+.insights-tab.active { color: #fff; }
+.insights-tab:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+.insights-tab-indicator {
+  position: absolute;
+  top: 0.35rem;
+  left: 0.35rem;
+  height: calc(100% - 0.7rem);
+  width: var(--tab-w, 0);
+  transform: translateX(var(--tab-x, 0));
+  background: var(--primary);
+  border-radius: 50px;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), width var(--transition);
+  z-index: 0;
+}
+
+[hidden] { display: none !important; }
+
 /* === INSIGHTS / BLOG CARDS === */
 .insights-grid {
   display: grid;

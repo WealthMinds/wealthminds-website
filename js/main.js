@@ -291,6 +291,43 @@
       });
     }
 
+    /* ── Insights Tabs (insights.html) ── */
+    const insightsTabs = document.querySelectorAll('.insights-tab');
+    const tabIndicator = document.querySelector('.insights-tab-indicator');
+    if (insightsTabs.length && tabIndicator) {
+      const panels = {
+        blog:  [document.getElementById('panel-blog'),  document.getElementById('blog-cta')],
+        insta: [document.getElementById('panel-insta'), document.getElementById('insta-cta')]
+      };
+      const moveIndicator = function (tab) {
+        tabIndicator.style.setProperty('--tab-w', tab.offsetWidth + 'px');
+        tabIndicator.style.setProperty('--tab-x', tab.offsetLeft + 'px');
+      };
+      const activate = function (name) {
+        insightsTabs.forEach(function (t) {
+          const isActive = t.dataset.tab === name;
+          t.classList.toggle('active', isActive);
+          t.setAttribute('aria-selected', String(isActive));
+          t.tabIndex = isActive ? 0 : -1;
+          if (isActive) moveIndicator(t);
+        });
+        Object.keys(panels).forEach(function (key) {
+          panels[key].forEach(function (el) {
+            if (el) el.hidden = key !== name;
+          });
+        });
+      };
+      insightsTabs.forEach(function (tab) {
+        tab.addEventListener('click', function () { activate(tab.dataset.tab); });
+      });
+      const activeTab = document.querySelector('.insights-tab.active');
+      if (activeTab) moveIndicator(activeTab);
+      window.addEventListener('resize', function () {
+        const current = document.querySelector('.insights-tab.active');
+        if (current) moveIndicator(current);
+      });
+    }
+
     /* ── Dismissible Disclaimer Banners ── */
     document.querySelectorAll('.disclaimer-close').forEach(function (btn) {
       btn.addEventListener('click', function () {
