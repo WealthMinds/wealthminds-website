@@ -119,7 +119,7 @@ input, textarea, select { font: inherit; }
 [data-contrast="high"] .credential-card  { border-top-color: #FFFFFF; }
 [data-contrast="high"] .charter-card     { border-left-color: #FFFFFF; }
 [data-contrast="high"] .commitment-item  { border-left-color: #FFFFFF; }
-[data-contrast="high"] .charter-commitment-list li { border-left-color: #FFFFFF; }
+[data-contrast="high"] .charter-commitment-list li { border-bottom-color: #FFFFFF; }
 [data-contrast="high"] .offer-item       { border-left-color: #FFFFFF; }
 [data-contrast="high"] .grievance-contact { border-left-color: #FFFFFF; }
 [data-contrast="high"] .grievance-card   { border-left-color: #FFFFFF; }
@@ -421,9 +421,19 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 .hero-bg {
   position: absolute;
   inset: 0;
+  background-image: url('../assets/images/hero-chart-motif.svg');
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+}
+
+/* Reuse the same brand chart motif on service-card thumbnails instead of
+   stock photography. */
+.card-img-chart {
+  position: relative;
+  background-image: url('../assets/images/hero-chart-motif.svg');
+  background-size: cover;
+  background-position: 60% 40%;
 }
 
 .hero-overlay {
@@ -455,6 +465,28 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   border-radius: 50px;
   margin-bottom: 1.5rem;
 }
+
+.hero-kicker {
+  display: block;
+  font-size: calc(0.85rem * var(--font-scale));
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  color: var(--gold);
+  margin-bottom: 1.25rem;
+}
+
+.hero-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.18);
+  font-size: calc(0.85rem * var(--font-scale));
+  color: var(--white-80);
+  letter-spacing: 0.02em;
+}
+.hero-meta-row span[aria-hidden] { color: var(--gold); opacity: 0.7; }
 
 .hero-home h1 {
   font-size: clamp(2.5rem, 7vw, 5.5rem);
@@ -715,44 +747,39 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   margin-top: 0.25rem;
 }
 
-/* Credential cards */
+/* Credential list — inline icon rows, no card chrome (kept distinct
+   from the boxed service cards, which stay boxed as the primary CTA) */
 .credential-cards {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1rem;
-  margin-top: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-top: 1.75rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--border);
 }
 
 .credential-card {
-  background: var(--bg);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  padding: 1.25rem 1rem;
-  border-top: 3px solid var(--primary);
-  transition: box-shadow var(--transition), transform var(--transition);
-}
-
-.credential-card:hover {
-  box-shadow: var(--shadow-md);
-  transform: translateY(-3px);
+  display: flex;
+  align-items: flex-start;
+  gap: 0.9rem;
 }
 
 .credential-card .icon {
-  width: 40px;
-  height: 40px;
+  width: 36px;
+  height: 36px;
   background: var(--primary-light);
-  border-radius: var(--radius);
+  border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-bottom: 0.75rem;
+  flex-shrink: 0;
 }
 
 .credential-card .icon svg { color: var(--primary); }
 .credential-card h4 {
   font-size: calc(0.9rem * var(--font-scale));
   color: var(--primary);
-  margin-bottom: 0.4rem;
+  margin-bottom: 0.25rem;
 }
 .credential-card p {
   font-size: calc(0.8rem * var(--font-scale));
@@ -1098,6 +1125,13 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   display: block;
 }
 
+.profile-intro {
+  color: var(--white-80);
+  font-size: calc(1rem * var(--font-scale));
+  max-width: 480px;
+  margin-bottom: 1.5rem;
+}
+
 .credential-tags {
   display: flex;
   flex-wrap: wrap;
@@ -1112,6 +1146,33 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   padding: 0.4rem 0.9rem;
   border-radius: 50px;
   white-space: nowrap;
+}
+
+.profile-stats-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+  padding-top: 1.75rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-stat {
+  display: flex;
+  flex-direction: column;
+}
+
+.profile-stat-num {
+  font-size: calc(1.5rem * var(--font-scale));
+  font-weight: 800;
+  color: var(--gold);
+  line-height: 1.1;
+}
+
+.profile-stat-lbl {
+  font-size: calc(0.78rem * var(--font-scale));
+  color: var(--white-80);
+  margin-top: 0.2rem;
 }
 
 /* Advisor section */
@@ -1226,6 +1287,14 @@ blockquote.philosophy-quote p {
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
   gap: 1.5rem;
   margin-top: 3rem;
+}
+
+/* When the grid resolves to 3 columns, center a lone orphan card left
+   alone in the final row instead of leaving it stranded on the left. */
+@media (min-width: 950px) {
+  .policy-card:last-child:nth-child(3n+1) {
+    grid-column: 2;
+  }
 }
 
 .policy-card {
@@ -1629,17 +1698,36 @@ blockquote.philosophy-quote p {
 }
 
 .map-embed-wrap {
+  position: relative;
   margin-top: 1.5rem;
   border-radius: var(--radius-lg);
   overflow: hidden;
   border: 1px solid var(--border);
 }
 .map-embed-wrap iframe {
+  position: relative;
+  z-index: 1;
   display: block;
   width: 100%;
   height: 220px;
   border: 0;
 }
+.map-fallback {
+  position: absolute;
+  inset: 0 0 44px 0;
+  z-index: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 1.5rem;
+  text-align: center;
+  background: var(--surface);
+  color: var(--text-muted);
+}
+.map-fallback svg { color: var(--primary); }
+.map-fallback span { font-size: calc(0.85rem * var(--font-scale)); max-width: 26ch; }
 .map-directions-link {
   display: flex;
   align-items: center;
@@ -1894,8 +1982,6 @@ blockquote.philosophy-quote p {
 
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
 
-  .credential-cards { grid-template-columns: 1fr 1fr; }
-
   .form-row { grid-template-columns: 1fr; }
 }
 
@@ -1920,8 +2006,6 @@ blockquote.philosophy-quote p {
   .footer-grid { grid-template-columns: 1fr; gap: 2rem; }
 
   .stats-inner { gap: 1.5rem; }
-
-  .credential-cards { grid-template-columns: 1fr; }
 
   .services-grid { grid-template-columns: 1fr; }
 
@@ -1997,22 +2081,21 @@ blockquote.charter-quote cite {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 1rem;
   margin-top: 1.5rem;
 }
 
 .charter-commitment-list li {
   display: flex;
   align-items: flex-start;
-  gap: 0.75rem;
-  padding: 1rem 1.25rem;
-  background: var(--surface);
-  border-radius: var(--radius);
-  border-left: 3px solid var(--primary);
+  gap: 0.9rem;
+  padding: 1.15rem 0;
+  border-bottom: 1px solid var(--border);
   font-size: calc(0.95rem * var(--font-scale));
   color: var(--text-light);
   line-height: 1.6;
 }
+
+.charter-commitment-list li:last-child { border-bottom: none; }
 
 .commitment-icon {
   width: 20px;
@@ -2395,6 +2478,22 @@ a.contact-info-value:hover { color: var(--primary); }
   100% { transform: translateY(0);    opacity: 1; }
 }
 [data-contrast="high"] #whatsapp-fab { background: #000000; border: 2px solid #FFFFFF; color: #FFFFFF; }
+
+@media (max-width: 768px) {
+  /* Move WhatsApp FAB to the right, stacked above Back-to-Top, so neither
+     button sits on top of left-aligned form fields on narrow viewports. */
+  #whatsapp-fab {
+    left: auto;
+    right: 1rem;
+    bottom: 4.75rem;
+    width: 46px;
+    height: 46px;
+  }
+  #back-to-top {
+    right: 1rem;
+    bottom: 1rem;
+  }
+}
 
 /* === 33. DISCLAIMER BANNER === */
 .disclaimer-banner {
