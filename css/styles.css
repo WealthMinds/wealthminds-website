@@ -2370,6 +2370,22 @@ blockquote.philosophy-quote p {
   .btn { font-size: calc(0.9rem * var(--font-scale)); padding: 0.65rem 1.25rem; }
   .profile-badge { right: 0; }
   .header-a11y { display: none; }
+
+  .price-row {
+    grid-template-columns: 1fr auto;
+    grid-template-areas:
+      "duration permonth"
+      "price price";
+    row-gap: 0.35rem;
+    padding: 0.6rem;
+  }
+  .price-row-duration { grid-area: duration; }
+  .price-row-permonth { grid-area: permonth; }
+  .price-row-price {
+    grid-area: price;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+  }
 }
 
 /* === 25. POLICIES PAGE — ADDITIONAL === */
