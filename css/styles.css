@@ -1097,7 +1097,9 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 
 .banner-hero-img {
   width: 100%;
-  height: auto;
+  height: clamp(200px, 42vw, 460px);
+  object-fit: contain;
+  background: #F4EFE3;
   display: block;
 }
 
