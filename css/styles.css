@@ -1242,6 +1242,11 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   margin-bottom: 0.5rem;
 }
 
+.promo-box-code-icon {
+  flex-shrink: 0;
+  color: var(--gold);
+}
+
 .promo-box-code-label {
   font-size: calc(0.82rem * var(--font-scale));
   color: var(--text-muted);
