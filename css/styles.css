@@ -2390,6 +2390,17 @@ blockquote.philosophy-quote p {
   .price-row-permonth {
     align-self: flex-end;
   }
+
+  .promo-box-ribbon {
+    top: 0.5rem;
+    right: -1.9rem;
+    font-size: calc(0.55rem * var(--font-scale));
+    padding: 0.2rem 1.7rem;
+  }
+  .promo-box-code {
+    margin-top: 1.6rem;
+    flex-wrap: wrap;
+  }
 }
 
 /* === 25. POLICIES PAGE — ADDITIONAL === */
