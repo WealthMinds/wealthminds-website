@@ -652,11 +652,13 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 .profile-photo-wrap {
   position: relative;
   margin-top: 2rem;
+  width: fit-content;
+  margin-left: 2.5rem;
 }
 
 .profile-photo {
   width: 100%;
-  max-width: 280px;
+  max-width: 320px;
   aspect-ratio: 3/4;
   object-fit: cover;
   object-position: top center;
@@ -666,7 +668,7 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
 
 .profile-photo-placeholder {
   width: 100%;
-  max-width: 280px;
+  max-width: 320px;
   aspect-ratio: 3/4;
   border-radius: var(--radius-lg);
   background: var(--primary-light);
@@ -2328,6 +2330,7 @@ blockquote.philosophy-quote p {
 
   .difference-grid { grid-template-columns: 1fr; gap: 3rem; }
   .profile-photo, .profile-photo-placeholder { max-width: 200px; }
+  .profile-photo-wrap { margin-left: 0; }
 
   .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
 
