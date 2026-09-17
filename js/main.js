@@ -393,6 +393,7 @@
       else if (page === 'services' && (path === 'services.html' || path.startsWith('services'))) isActive = true;
       else if (page === 'policies' && path === 'policies.html') isActive = true;
       else if (page === 'investor-charter' && path === 'investor-charter.html') isActive = true;
+      else if (page === 'complaint-data' && path === 'complaint-data.html') isActive = true;
       else if (page === 'insights' && path === 'insights.html') isActive = true;
       else if (page === 'contact' && path === 'contact.html') isActive = true;
 

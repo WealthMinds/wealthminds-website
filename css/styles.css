@@ -122,6 +122,7 @@ input, textarea, select { font: inherit; }
 [data-contrast="high"] .charter-commitment-list li { border-bottom-color: #FFFFFF; }
 [data-contrast="high"] .offer-item       { border-left-color: #FFFFFF; }
 [data-contrast="high"] .grievance-contact { border-left-color: #FFFFFF; }
+[data-contrast="high"] .charter-commitment-list.list-x .commitment-icon { color: #FFFFFF; }
 [data-contrast="high"] .grievance-card   { border-left-color: #FFFFFF; }
 [data-contrast="high"] .btn-outline-primary { border-color: #FFFFFF; }
 
@@ -307,6 +308,7 @@ p  { font-size: calc(1rem * var(--font-scale)); line-height: 1.7; }
   align-items: center;
   gap: 0.5rem;
   color: var(--primary);
+  margin-left: -1.75rem;
 }
 
 .logo-icon {
@@ -2482,6 +2484,15 @@ blockquote.charter-quote cite {
   flex-shrink: 0;
   margin-top: 2px;
 }
+
+.charter-subheading {
+  font-size: calc(1.15rem * var(--font-scale));
+  color: var(--primary);
+  font-weight: 700;
+  margin-top: 2rem;
+}
+
+.charter-commitment-list.list-x .commitment-icon { color: #B3261E; }
 
 /* === 27. COMPLAINT DATA PAGE — ADDITIONAL === */
 .complaint-table-wrap {

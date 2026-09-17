@@ -16,11 +16,12 @@ Static HTML/CSS/JS website for **WealthMinds**, a SEBI-registered Research Analy
 | `services/swing-trading-research.html` | Swing trading detail page |
 | `services/long-term-investment-research.html` | Long-term investment detail page |
 | `policies.html` | Links to policy PDFs |
-| `investor-charter.html` | SEBI investor charter (includes Grievance Summary complaint data tables at the bottom) |
+| `investor-charter.html` | SEBI investor charter (mission/vision; links out to Complaint Data page) |
+| `complaint-data.html` | SEBI Grievance Summary — monthly/annual complaint tables, escalation matrix, grievance redressal contact |
 | `insights.html` | Blog/insights placeholder page (empty — content pending) |
 | `contact.html` | Contact form (Formspree) |
 | `404.html` | Custom 404 page (auto-served by GitHub Pages) |
-| `sitemap.xml` | XML sitemap for all 9 pages |
+| `sitemap.xml` | XML sitemap for all 10 pages |
 | `robots.txt` | Crawler rules pointing to sitemap |
 
 All pages share the same `css/styles.css` and `js/main.js` via relative paths (subpages use `../css/styles.css` and `../js/main.js`).
@@ -76,12 +77,13 @@ The HC (high contrast) and A−/A/A+ (font size) buttons are embedded inside `.h
 - 7 PDFs in `policies/documents/` — exact filenames matter
 - Formspree form ID in `contact.html` — replace `REPLACE_WITH_YOUR_ID`
 - Social media `href="#"` placeholders for LinkedIn, Twitter, YouTube
-- `investor-charter.html` — update the monthly complaint table (Grievance Summary section) each month
+- `complaint-data.html` — update the monthly complaint table (Grievance Summary section) each month
 - `insights.html` — currently blank; build out blog/article content later
 
 ## SEBI Compliance Notes
 
 - The site must always display SEBI registration number and disclaimer text
-- Investor charter page (including its embedded complaint data tables) is a regulatory requirement — do not remove it
+- Investor charter page and the Complaint Data page (monthly/annual grievance tables) are regulatory requirements — do not remove either
+- `investor-charter.html` links out to `complaint-data.html` for the Grievance Summary tables and escalation matrix (moved there); `data/complaints.json` still feeds those tables via `js/main.js`
 - Policy PDF filenames in `policies/documents/` must match exactly what `policies.html` links to
 - Service detail pages must retain the SEBI risk disclaimer banner
