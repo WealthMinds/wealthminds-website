@@ -2931,3 +2931,27 @@ a.contact-info-value:hover { color: var(--primary); }
   .reveal { opacity: 1 !important; transform: none !important; }
   .hero-home h1 .word { opacity: 1 !important; transform: none !important; }
 }
+
+
+/* Registered Research Analyst identity added alongside the existing logo */
+.logo-link { display: grid; grid-template-columns: auto auto; justify-content: start; align-items: center; column-gap: 0.5rem; row-gap: 0.15rem; flex-shrink: 0; padding: 0.35rem 0; }
+.site-header .header-inner { height: auto; min-height: 70px; }
+.header-registered-identity { grid-column: 1 / -1; width: 0; min-width: 100%; white-space: nowrap; display: flex; flex-direction: column; justify-content: center; gap: 0.1rem; line-height: 1.2; }
+.header-registered-identity .registered-name { font-size: 0.9rem; font-weight: 700; color: var(--primary); }
+.header-registered-identity .registered-label { font-size: 0.7rem; color: var(--text-muted); }
+.header-registered-identity .trade-name-label { font-size: 0.66rem; color: var(--text-muted); }
+.stat-block .number.stat-text { font-size: calc(1rem * var(--font-scale)); line-height: 1.25; white-space: normal; }
+.profile-badge { max-width: min(260px, 90%); white-space: normal; }
+.profile-badge .title-badge { line-height: 1.3; }
+@media (max-width: 768px) { .header-registered-identity { } .header-registered-identity .registered-name { font-size: 0.68rem; } .header-registered-identity .registered-label, .header-registered-identity .trade-name-label { font-size: 0.54rem; } }
+
+/* Header fit: tighter spacing; switch to hamburger menu before the nav can overflow */
+.site-header .header-inner { gap: 1rem; }
+.site-header .main-nav { gap: 0.25rem; }
+.site-header .main-nav .nav-link { padding: 0.4rem 0.6rem; }
+@media (max-width: 1240px) {
+  .logo-link { margin-left: 0; }
+  .main-nav { display: none; }
+  .hamburger { display: flex; margin-left: auto; }
+  .header-a11y { display: none; }
+}
